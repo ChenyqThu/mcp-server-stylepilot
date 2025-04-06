@@ -2,18 +2,36 @@
   "styles": [
     {
       "id": "deep_thinking_essay",
-      "name": "深度思考型散文",
+      "name": "少楠深度思考型散文风格",
       "description": "深度思考型散文，将个人经历与思想洞察相结合，以温和自省的口吻探讨成长与人生哲理",
       "template": {
         "style_summary": "深度思考型散文，将个人经历与思想洞察相结合，以温和自省的口吻探讨成长与人生哲理",
         "language": {
-          "sentence_pattern": ["中短句为主，穿插长句形成节奏变化", "设问句与自答式结构"],
+          "sentence_pattern": [
+            "中短句为主，穿插长句形成节奏变化",
+            "设问句与自答式结构"
+          ],
           "word_choice": {
             "formality_level": "3",
-            "preferred_words": ["热爱", "痛苦", "经历", "内心", "思考", "承受"],
-            "avoided_words": ["专业术语", "复杂概念词"]
+            "preferred_words": [
+              "热爱",
+              "痛苦",
+              "经历",
+              "内心",
+              "思考",
+              "承受"
+            ],
+            "avoided_words": [
+              "专业术语",
+              "复杂概念词"
+            ]
           },
-          "rhetoric": ["比喻", "对比", "自问自答", "引用与典故"]
+          "rhetoric": [
+            "比喻",
+            "对比",
+            "自问自答",
+            "引用与典故"
+          ]
         },
         "structure": {
           "paragraph_length": "短至中等，多在50-150字之间",
@@ -36,12 +54,28 @@
           "rhythm": "缓慢深入，给读者留下思考空间"
         },
         "uniqueness": {
-          "signature_phrases": ["愿意主动承受痛苦，才是热爱的证明", "回头看", "内心"],
-          "imagery_system": ["旅程与道路", "痛苦与成长", "内心与外界"]
+          "signature_phrases": [
+            "愿意主动承受痛苦，才是热爱的证明",
+            "回头看",
+            "内心"
+          ],
+          "imagery_system": [
+            "旅程与道路",
+            "痛苦与成长",
+            "内心与外界"
+          ]
         },
         "cultural": {
-          "allusions": ["现代文化引用", "中等频率"],
-          "knowledge_domains": ["职场", "创业", "艺术", "心理学"]
+          "allusions": [
+            "现代文化引用",
+            "中等频率"
+          ],
+          "knowledge_domains": [
+            "职场",
+            "创业",
+            "艺术",
+            "心理学"
+          ]
         },
         "rhythm": {
           "syllable_pattern": "中文短句为主，节奏舒缓",
@@ -49,6 +83,100 @@
           "tempo": "中等节奏，有快慢变化"
         }
       }
+    },
+    {
+      "id": "shitieshengs_prose",
+      "name": "史铁生散文风格",
+      "description": "深沉内省的散文风格，融合哲思、抒情与叙事，以朴实语言探讨生命意义与存在价值",
+      "template": {
+        "style_summary": "深沉内省的散文风格，融合哲思、抒情与叙事，以朴实语言探讨生命意义与存在价值",
+        "language": {
+          "sentence_pattern": [
+            "绵长复合句与短句错落句式",
+            "富有节奏感的排比句"
+          ],
+          "word_choice": {
+            "formality_level": "4",
+            "preferred_words": [
+              "苍凉",
+              "沉郁",
+              "寂寥",
+              "镇静",
+              "幽静",
+              "熨帖",
+              "苍幽"
+            ],
+            "avoided_words": [
+              "口语化表达",
+              "网络流行语",
+              "过于直白的情感词"
+            ]
+          },
+          "rhetoric": [
+            "时空蒙太奇",
+            "物我同构"
+          ]
+        },
+        "structure": {
+          "paragraph_length": [
+            "中等偏长",
+            "禁止以平均字数生成工整段落，穿插一句话作为段落"
+          ],
+          "transition_style": "意象过渡与时空转换相结合，自然流畅",
+          "hierarchy_pattern": "以空间为线索，内外景交替，由具体场景引发哲思"
+        },
+        "narrative": {
+          "perspective": "第一人称独白与自我对话",
+          "time_sequence": "现在与回忆交错，时空跨度大",
+          "narrator_attitude": "冷静观察与深情思考并存，自省而不自怜"
+        },
+        "emotion": {
+          "intensity": "3",
+          "expression_style": [
+            "物哀式抒情",
+            "含蓄内敛，以景物与人物侧面烘托情感"
+          ],
+          "tone": "平静中带着忧伤，哲思中蕴含温情"
+        },
+        "thinking": {
+          "logic_pattern": "由具体场景引发哲理思考，螺旋式深入",
+          "depth": "5",
+          "rhythm": "缓慢而深沉，如同在园中漫步般的思考节奏"
+        },
+        "uniqueness": {
+          "signature_phrases": [
+            "人真正的名字叫欲望",
+            "死是一件不必着急的事"
+          ],
+          "imagery_system": [
+            "古园",
+            "落叶",
+            "老树",
+            "轮椅",
+            "光影",
+            "四季更替"
+          ]
+        },
+        "cultural": {
+          "allusions": [
+            "存在主义哲学",
+            "中等频率"
+          ],
+          "knowledge_domains": [
+            "佛教意象",
+            "叙事治疗",
+            "时间现象学"
+          ]
+        },
+        "rhythm": {
+          "syllable_pattern": "长短句自然交替，音节丰富多变",
+          "pause_pattern": [
+            "分号构建的沉思单元",
+            "破折号制造呼吸裂隙"
+          ],
+          "tempo": "舒缓而富于变化"
+        }
+      }
     }
   ]
-} 
+}

@@ -17,6 +17,11 @@ import {
 } from "@modelcontextprotocol/sdk/types.js";
 import * as fs from 'fs/promises';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+// 获取当前文件的目录路径（ES模块中的__dirname替代方案）
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // 风格模板类型定义
 type Style = {
@@ -29,8 +34,8 @@ type Style = {
 // 风格类别
 const CATEGORIES = ['text', 'card', 'structure'];
 
-// 设置数据目录
-const DATA_DIR = path.join(process.cwd(), 'data');
+// 使用相对于脚本文件的路径
+const DATA_DIR = path.resolve(__dirname, '../data');
 
 // 风格模板文件映射
 const STYLE_FILES: Record<string, string> = {
@@ -57,19 +62,37 @@ const server = new Server(
 // 确保数据目录存在
 async function ensureDataDirExists() {
   try {
+    console.error(`正在检查数据目录: ${DATA_DIR}`);
     await fs.access(DATA_DIR);
+    console.error(`数据目录已存在`);
   } catch (error) {
-    await fs.mkdir(DATA_DIR, { recursive: true });
+    console.error(`数据目录不存在，正在创建...`);
+    try {
+      await fs.mkdir(DATA_DIR, { recursive: true });
+      console.error(`数据目录创建成功`);
+    } catch (mkdirError) {
+      console.error(`创建数据目录失败: ${mkdirError}`);
+      throw mkdirError;
+    }
   }
 
   // 确保每个风格文件存在
   for (const category of CATEGORIES) {
     const filePath = STYLE_FILES[category];
     try {
+      console.error(`检查风格文件: ${filePath}`);
       await fs.access(filePath);
+      console.error(`风格文件 ${category} 已存在`);
     } catch (error) {
-      // 如果文件不存在，创建一个空的风格列表
-      await fs.writeFile(filePath, JSON.stringify({ styles: [] }, null, 2));
+      console.error(`风格文件 ${category} 不存在，正在创建...`);
+      try {
+        // 如果文件不存在，创建一个空的风格列表
+        await fs.writeFile(filePath, JSON.stringify({ styles: [] }, null, 2));
+        console.error(`风格文件 ${category} 创建成功`);
+      } catch (writeError) {
+        console.error(`创建风格文件 ${category} 失败: ${writeError}`);
+        throw writeError;
+      }
     }
   }
 }
@@ -569,7 +592,21 @@ server.setRequestHandler(GetPromptRequestSchema, async (request) => {
 
 // 启动服务器
 async function main() {
+  // 添加调试输出
+  console.error(`当前文件路径: ${__filename}`);
+  console.error(`当前目录路径: ${__dirname}`);
+  console.error(`当前工作目录: ${process.cwd()}`);
+  console.error(`数据目录路径: ${DATA_DIR}`);
+  
   await ensureDataDirExists();
+  
+  // 输出每个风格文件的路径和是否存在
+  for (const category of CATEGORIES) {
+    const filePath = STYLE_FILES[category];
+    const exists = await fs.access(filePath).then(() => true).catch(() => false);
+    console.error(`风格文件 ${category}: ${filePath}, 存在: ${exists}`);
+  }
+  
   const transport = new StdioServerTransport();
   await server.connect(transport);
 }
