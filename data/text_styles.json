@@ -1,0 +1,54 @@
+{
+  "styles": [
+    {
+      "id": "deep_thinking_essay",
+      "name": "深度思考型散文",
+      "description": "深度思考型散文，将个人经历与思想洞察相结合，以温和自省的口吻探讨成长与人生哲理",
+      "template": {
+        "style_summary": "深度思考型散文，将个人经历与思想洞察相结合，以温和自省的口吻探讨成长与人生哲理",
+        "language": {
+          "sentence_pattern": ["中短句为主，穿插长句形成节奏变化", "设问句与自答式结构"],
+          "word_choice": {
+            "formality_level": "3",
+            "preferred_words": ["热爱", "痛苦", "经历", "内心", "思考", "承受"],
+            "avoided_words": ["专业术语", "复杂概念词"]
+          },
+          "rhetoric": ["比喻", "对比", "自问自答", "引用与典故"]
+        },
+        "structure": {
+          "paragraph_length": "短至中等，多在50-150字之间",
+          "transition_style": "以小标题或数字分段，通过个人故事或思考转换话题",
+          "hierarchy_pattern": "从具体经历到抽象思考，形成递进式结构"
+        },
+        "narrative": {
+          "perspective": "第一人称，亲身经历分享",
+          "time_sequence": "现在与过去穿插，回忆与现实交织",
+          "narrator_attitude": "反思型，温和谦逊但有坚定立场"
+        },
+        "emotion": {
+          "intensity": "3",
+          "expression_style": "克制而真诚，避免情绪化爆发",
+          "tone": "平静中带有思考的温度，偶有幽默自嘲"
+        },
+        "thinking": {
+          "logic_pattern": "归纳式思维，从个体经验提炼普遍道理",
+          "depth": "4",
+          "rhythm": "缓慢深入，给读者留下思考空间"
+        },
+        "uniqueness": {
+          "signature_phrases": ["愿意主动承受痛苦，才是热爱的证明", "回头看", "内心"],
+          "imagery_system": ["旅程与道路", "痛苦与成长", "内心与外界"]
+        },
+        "cultural": {
+          "allusions": ["现代文化引用", "中等频率"],
+          "knowledge_domains": ["职场", "创业", "艺术", "心理学"]
+        },
+        "rhythm": {
+          "syllable_pattern": "中文短句为主，节奏舒缓",
+          "pause_pattern": "自然停顿，段落之间留白明显",
+          "tempo": "中等节奏，有快慢变化"
+        }
+      }
+    }
+  ]
+} 

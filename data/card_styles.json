@@ -1,0 +1,52 @@
+{
+  "styles": [
+    {
+      "id": "horizontal_six_grid",
+      "name": "通用-横版六宫格卡片",
+      "description": "简约优雅的信息卡片，采用六宫格布局，以几何装饰和色彩分类展示结构化内容",
+      "template": {
+        "style_id": "horizontal_six_grid",
+        "name": "通用-横版六宫格卡片",
+        "style_summary": "简约优雅的信息卡片，采用六宫格布局，以几何装饰和色彩分类展示结构化内容",
+        "visual": {
+          "layout_pattern": ["网格式布局，3x2六宫格排列", "主卡片包含子卡片结构"],
+          "color_usage": {
+            "background_style": "渐变色主背景，纯色子卡片",
+            "accent_method": "每个子卡片使用不同的强调色",
+            "contrast_level": "4",
+            "preferred_palettes": ["蓝紫渐变主题", "彩色类别标识", "白色内容区域"]
+          },
+          "decoration": ["半透明几何图案", "色块下划线", "图标与文字组合"]
+        },
+        "structure": {
+          "hierarchy_pattern": "大标题+副标题框架，内容分为多个同等重要的类别块",
+          "card_arrangement": "均匀分布，视觉平衡",
+          "information_density": "3",
+          "whitespace_usage": "适度留白，清晰分隔各内容区域"
+        },
+        "typography": {
+          "hierarchy_levels": "4个层级（主标题、副标题、卡片标题、正文）",
+          "emphasis_techniques": ["粗细对比", "大小变化", "色彩强调", "下划线标记"],
+          "readability_focus": "高，采用清晰字体和足够对比度"
+        },
+        "content": {
+          "format_types": ["列表式", "短段落", "要点突出", "可视化图表"],
+          "length_constraints": "每卡片内容简洁，控制在100字以内",
+          "highlight_method": "关键词加粗或彩色标注",
+          "categorization": "内容按主题或功能分类，每类使用独特视觉标识"
+        },
+        "icon_usage": {
+          "purpose": "类别标识和内容分类",
+          "style": "线性图标，简洁现代",
+          "placement": "标题前方，与文字组合"
+        },
+        "aesthetic": {
+          "style_direction": "现代简约，几何感",
+          "mood": "专业而不失活力",
+          "balance_principle": "结构与装饰平衡，内容为主，视觉为辅",
+          "guiding_concept": "简约而不失优雅，几何形状传达和谐感"
+        }
+      }
+    }
+  ]
+} 

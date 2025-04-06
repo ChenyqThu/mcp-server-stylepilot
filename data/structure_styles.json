@@ -1,0 +1,39 @@
+{
+  "styles": [
+    {
+      "id": "card_notes",
+      "name": "卡片笔记结构",
+      "description": "采用卡片笔记法组织信息，以小型自包含单元呈现知识点，便于记忆和灵活组合",
+      "template": {
+        "style_id": "card_notes",
+        "name": "卡片笔记结构",
+        "style_summary": "采用卡片笔记法组织信息，以小型自包含单元呈现知识点，便于记忆和灵活组合",
+        "organization": {
+          "hierarchy": "扁平化结构，避免深层嵌套",
+          "classification": "按主题或概念分类，使用标签系统",
+          "association_method": "通过关键概念或问题建立关联"
+        },
+        "information_flow": {
+          "pattern": "非线性，每个卡片自包含但相互关联",
+          "direction": "概念网络式，允许多路径探索",
+          "navigation": "通过标签或关键词在卡片间跳转"
+        },
+        "chunking": {
+          "segmentation": "每个概念或知识点独立成卡",
+          "grouping_logic": "按知识领域或问题空间分组",
+          "unit_size": "每卡片控制在200字左右，一个卡片表达一个完整概念"
+        },
+        "emphasis": {
+          "key_info_placement": "卡片顶部或标题中包含核心概念",
+          "highlight_technique": "使用标题、粗体或特殊符号标记关键点",
+          "priority_indication": "通过卡片顺序或视觉标记表示重要性"
+        },
+        "connection": {
+          "internal_reference": "使用关键词或编号系统建立卡片间引用",
+          "transition_elements": "使用问题引导思考，指向相关卡片",
+          "linking_strategy": "通过共同概念或问答关系建立链接"
+        }
+      }
+    }
+  ]
+} 
