@@ -1,52 +1,139 @@
 {
   "styles": [
     {
-      "id": "horizontal_six_grid",
-      "name": "通用-横版六宫格卡片",
-      "description": "简约优雅的信息卡片，采用六宫格布局，以几何装饰和色彩分类展示结构化内容",
+      "id": "geometric-gradient-info-card",
+      "name": "几何渐变信息卡片",
+      "description": "一种具有几何渐变背景的高级信息卡片模板，特别适合用于深度内容的结构化呈现，如哲学讨论、概念解析、方法论总结等。特点是优雅的渐变背景、清晰的视觉层次和丰富的交互体验。",
       "template": {
-        "style_id": "horizontal_six_grid",
-        "name": "通用-横版六宫格卡片",
-        "style_summary": "简约优雅的信息卡片，采用六宫格布局，以几何装饰和色彩分类展示结构化内容",
-        "visual": {
-          "layout_pattern": ["网格式布局，3x2六宫格排列", "主卡片包含子卡片结构"],
-          "color_usage": {
-            "background_style": "渐变色主背景，纯色子卡片",
-            "accent_method": "每个子卡片使用不同的强调色",
-            "contrast_level": "4",
-            "preferred_palettes": ["蓝紫渐变主题", "彩色类别标识", "白色内容区域"]
+        "completeHTML": {
+          "说明": "包含所有必要元素的完整HTML结构",
+          "参考代码": "<!DOCTYPE html> <html lang=\"zh-CN\"> <head> <meta charset=\"UTF-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <title>${标题}</title> <script src=\"https://cdn.tailwindcss.com\"></script> <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css\"> <style> /* 这里放样式 */ </style> </head> <body> <div id=\"card\" class=\"geometric-bg w-[1080px] rounded-xl border-2 border-white/20 shadow-lg p-8 flex flex-col gap-8 relative\"> <!-- 顶部信息 --> <!-- 卡片容器 --> <!-- 底部签名 --> </div> </body> </html>"
+        },
+        "background": {
+          "说明": "渐变背景是卡片的视觉基础，通过几何图案增添层次感。背景色选择应与内容主题呼应：深邃的蓝紫适合哲学思考，温暖的橙红适合人文话题，沉稳的墨绿适合自然生态",
+          "参考样式": "@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap'); body { font-family: 'Noto Sans SC', sans-serif; background-color: #f5f7fa; padding: 20px; display: flex; justify-content: center; flex-direction: column; align-items: center; } .geometric-bg { background: linear-gradient(135deg, #颜色1 0%, #颜色2 100%); position: relative; overflow: hidden; } .geometric-bg::before { content: \"\"; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 20%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 20%), linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.1) 48%, rgba(255,255,255,0.1) 52%, transparent 52%), linear-gradient(-45deg, transparent 48%, rgba(255,255,255,0.1) 48%, rgba(255,255,255,0.1) 52%, transparent 52%); background-size: 100px 100px; }",
+          "基础容器": "<div id=\"card\" class=\"geometric-bg w-full md:w-[720px] lg:w-[1080px] rounded-xl border-2 border-white/20 shadow-lg p-6 md:p-8 flex flex-col gap-6 md:gap-8 relative\"><!-- 内容放这里 --></div>"
+        },
+        "topArea": {
+          "说明": "顶部区域采用响应式两栏布局，在小屏幕下自动堆叠。左侧为标题区，右侧为信息块，需要注意移动端的文字对齐方式",
+          "参考样式": "<div class=\"flex flex-col md:flex-row justify-between items-start gap-4 w-full\"><!-- 标题区域 --> <!-- 信息块 --></div>"
+        },
+        "titleArea": {
+          "说明": "标题区域包含主标题和副标题，主标题使用「」引号突出关键词，副标题用简练的语言概括主旨。注意使用drop-shadow增加立体感",
+          "标题": "使用「关键词」+描述性文字的形式，突出核心概念",
+          "副标题": "用一句话概括内容要点，建议不超过20字",
+          "参考样式": "<div class=\"max-w-3xl\"> <h1 class=\"text-white text-2xl md:text-3xl lg:text-4xl font-medium mb-2 drop-shadow\">「${关键词}」${描述性文字}</h1> <h2 class=\"text-white text-xl md:text-2xl opacity-90\">${副标题}</h2> </div>"
+        },
+        "infoBlock": {
+          "说明": "信息块在移动端左对齐，桌面端右对齐。每个信息项都配有图标，保持统一的间距和对齐方式",
+          "参考样式": "<div class=\"text-white text-left md:text-right text-sm md:text-base space-y-1\"> <div class=\"flex items-center md:justify-end gap-2\"><i class=\"fas fa-user-circle\"></i><span>作者：{作者}</span></div><div class=\"flex items-center md:justify-end gap-2\"> <i class=\"fas fa-clock\"></i> <span>阅读: 约${时间}分钟</span> </div> <div class=\"flex items-center md:justify-end gap-2\"> <i class=\"fas fa-lightbulb\"></i> <span>类型：${类型}</span> </div> <div class=\"flex items-center md:justify-end gap-2\"> <i class=\"fas fa-calendar-alt\"></i> <span>日期：${日期}</span> </div> </div>"
+        },
+        "cardContainer": {
+          "说明": "根据内容复杂度选择卡片容器数量，卡片容器使用网格布局，响应式地调整列数。默认情况下6个卡片使用3x2网格，4个卡片使用2x2网格，3个卡片可选择1x3或3x1布局。每个卡片都应该有统一的高度和间距",
+          "参考样式": "<div class=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6\"><!-- 卡片内容 --></div>"
+        },
+        "cardBasic": {
+          "说明": "每个卡片都是一个独立的内容单元，具有独立的卡片内容主题色、悬浮效果和阴影变化",
+          "参考样式": "<div class=\"card-hover bg-white rounded-xl border border-gray-200 p-4 h-full\"><!-- 卡片标题 --> <!-- 卡片内容 --></div>"
+        },
+        "cardTitle": {
+          "说明": "卡片标题区域包含图标、文字和下划线装饰。图标颜色要与主题一致，下划线使用半透明效果增加层次感",
+          "参考样式": "<div class=\"mb-4 relative\"> <h3 class=\"text-lg md:text-xl font-medium flex items-center text-${颜色}-600\"> <i class=\"fas fa-${图标} mr-2\"></i> ${标题} </h3> <div class=\"absolute bottom--2 left-0 w-full h-1 bg-${颜色}-400/30\"></div> </div>"
+        },
+        "cardContent" :{
+          "说明":"根据卡片内容选择合适的表现样式，可以灵活组合，并注意强调重点概念或内容，对于适合可视化的内容优先进行合适方式可视化。",
+          "cardContentList": {
+            "说明": "列表型内容使用无序列表或有序列表，配合图标增强可读性。重要内容可以使用颜色、加粗或下划线强调",
+            "无序列表参考样式": "<div class=\"space-y-3 text-gray-800 text-sm md:text-base\"> <div class=\"concept-tag bg-${颜色}-50 text-${颜色}-600\"> <i class=\"fas fa-circle-dot mr-1 text-xs\"></i> ${标签文本} </div> <ul class=\"list-none space-y-2\"> <li class=\"flex items-start gap-2 hover:text-${颜色}-600 transition-colors\"> <i class=\"fas fa-angle-right mt-1 text-${颜色}-400\"></i> <span>${内容}</span> </li> </ul> </div>"
           },
-          "decoration": ["半透明几何图案", "色块下划线", "图标与文字组合"]
+          "cardContentBlock": {
+            "说明": "块状内容使用卡片式设计，带有背景色和悬浮效果。适合展示概念解释或重要说明",
+            "参考样式": "<div class=\"p-3 bg-${颜色}-50 rounded-lg hover:bg-${颜色}-100 transition-colors\"> <div class=\"font-medium text-${颜色}-700 mb-1\">${小标题}</div> <p class=\"text-sm text-gray-600\">${内容描述}</p> </div>"
+          },
+          "cardContentQuote": {
+            "说明": "引用内容使用特殊的quote-box样式，带有装饰性引号和背景色",
+            "参考样式": "<div class=\"quote-box bg-${颜色}-50/50 border border-${颜色}-100\"> <p class=\"text-sm text-gray-500 pl-2 italic\"> ${去引号的引用内容} <span class=\"text-${颜色}-600 font-medium\">${强调部分}</span> </p> </div>",
+            "quote-box样式": ".quote-box { position: relative; padding: 1rem; border-radius: 0.5rem; margin: 1rem 0; } .quote-box::before { content: '\"'; position: absolute; top: -0.5rem; left: 0.5rem; font-size: 3rem; color: rgba(${颜色}, 0.2); font-family: serif; }"
+          },
+          "textEmphasis": {
+            "说明": "在内容中灵活使用不同的强调样式",
+            "颜色强调": "<span class=\"text-${颜色}-600\">${强调文本}</span>",
+            "加粗强调": "<span class=\"font-medium\">${强调文本}</span>",
+            "下划线强调": "<span class=\"underline decoration-${颜色}-400 decoration-2\">${强调文本}</span>",
+            "斜体强调": "<span class=\"italic\">${强调文本}</span>",
+            "背景色强调": "<span class=\"bg-${颜色}-100 text-${颜色}-800 px-1 rounded\">${强调文本}</span>"
+          },
+          "conceptTag": {
+            "说明": "概念标签用于突出显示关键词或分类，具有圆角和背景色",
+            "参考样式": ".concept-tag { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium transition-colors; }"
+          },
+          "visualElements": {
+            "说明": "可以添加简单的可视化元素，如关系图、流程图等",
+            "圆形节点": "<div class=\"absolute ${位置} w-${尺寸} h-${尺寸} bg-${颜色}-50 rounded-full flex items-center justify-center transform transition-all duration-300 hover:scale-110 hover:bg-${颜色}-100 group\"> <div class=\"text-center\"> <div class=\"text-${大小} font-bold text-${颜色}-500\">${文字}</div> <div class=\"text-xs text-${颜色}-400 opacity-0 group-hover:opacity-100 transition-opacity\">${说明}</div> </div> </div>",
+            "连接线": "<svg class=\"absolute inset-0 w-full h-full pointer-events-none\" style=\"z-index: -1;\"> <path d=\"${路径}\" stroke=\"url(#gradient1)\" stroke-width=\"2\" fill=\"none\" /> <defs> <linearGradient id=\"gradient1\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"100%\"> <stop offset=\"0%\" style=\"stop-color: ${起始颜色}\" /> <stop offset=\"100%\" style=\"stop-color: ${结束颜色}\" /> </linearGradient> </defs> </svg>"
+          }
         },
-        "structure": {
-          "hierarchy_pattern": "大标题+副标题框架，内容分为多个同等重要的类别块",
-          "card_arrangement": "均匀分布，视觉平衡",
-          "information_density": "3",
-          "whitespace_usage": "适度留白，清晰分隔各内容区域"
+        "bottomSignature": {
+          "说明": "底部签名使用斜体和半透明效果，包含必要的元信息",
+          "参考样式": "<div class=\"text-right text-white/90 text-sm\"> ${主题} | ${系列名称} | ${年份} </div>"
         },
-        "typography": {
-          "hierarchy_levels": "4个层级（主标题、副标题、卡片标题、正文）",
-          "emphasis_techniques": ["粗细对比", "大小变化", "色彩强调", "下划线标记"],
-          "readability_focus": "高，采用清晰字体和足够对比度"
+        "colorSchemes": {
+          "说明": "根据内容主题选择合适的配色方案,包括但不限于以下示例",
+          "哲学思考": {
+            "主色": "indigo",
+            "渐变": "linear-gradient(135deg, #7B68EE 0%, #6495ED 100%)",
+            "辅助色": ["purple", "blue", "rose"]
+          },
+          "方法论": {
+            "主色": "orange",
+            "渐变": "linear-gradient(135deg, #FF9966 0%, #FF5E62 100%)",
+            "辅助色": ["yellow", "red", "amber"]
+          },
+          "技术分析": {
+            "主色": "cyan",
+            "渐变": "linear-gradient(135deg, #36D1DC 0%, #5B86E5 100%)",
+            "辅助色": ["sky", "blue", "teal"]
+          }
         },
-        "content": {
-          "format_types": ["列表式", "短段落", "要点突出", "可视化图表"],
-          "length_constraints": "每卡片内容简洁，控制在100字以内",
-          "highlight_method": "关键词加粗或彩色标注",
-          "categorization": "内容按主题或功能分类，每类使用独特视觉标识"
+        "responsiveDesignTips": {
+          "说明": "使卡片在不同设备上都有良好表现",
+          "技巧": [
+            "使用md:和lg:前缀区分不同屏幕尺寸的样式",
+            "在小屏幕上减少列数：grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+            "调整文字大小：text-sm md:text-base lg:text-lg",
+            "对于小屏幕设置合适的容器宽度：w-full md:w-[720px] lg:w-[1080px]",
+            "考虑在小屏幕上改变布局方向：flex-col md:flex-row"
+          ]
         },
-        "icon_usage": {
-          "purpose": "类别标识和内容分类",
-          "style": "线性图标，简洁现代",
-          "placement": "标题前方，与文字组合"
+        "usageGuide": {
+          "说明": "如何使用这个模板的步骤说明",
+          "步骤": [
+            "根据文章内容，选择适当的颜色主题",
+            "提炼核心内容填入标题和副标题",
+            "确定信息块所需的元数据",
+            "根据内容重点和结构选择合适的卡片数量和布局",
+            "为每个卡片选择合适的标题和图标",
+            "根据内容类型选择相应的内容样式",
+            "添加底部签名",
+            "确保HTML结构完整，可以正常显示"
+          ]
         },
-        "aesthetic": {
-          "style_direction": "现代简约，几何感",
-          "mood": "专业而不失活力",
-          "balance_principle": "结构与装饰平衡，内容为主，视觉为辅",
-          "guiding_concept": "简约而不失优雅，几何形状传达和谐感"
+        "commonIcons": {
+          "说明": "常用的FontAwesome图标参考，实际请根据需要选择合适的图标",
+          "思考/理念": "fa-lightbulb",
+          "方法/策略": "fa-rocket",
+          "成果/目标": "fa-star",
+          "工具/实践": "fa-tools",
+          "过程/步骤": "fa-list-ol",
+          "团队/协作": "fa-users",
+          "数据/分析": "fa-chart-bar",
+          "创新/突破": "fa-bolt",
+          "注意/警告": "fa-exclamation-circle",
+          "时间/进度": "fa-clock",
+          "成长/发展": "fa-seedling",
+          "核心/重点": "fa-bullseye"
         }
       }
     }
   ]
-} 
+}
