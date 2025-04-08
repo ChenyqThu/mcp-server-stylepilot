@@ -53,7 +53,7 @@
           "cardContentQuote": {
             "说明": "引用内容使用特殊的quote-box样式，带有装饰性引号和背景色",
             "参考样式": "<div class=\"quote-box bg-${颜色}-50/50 border border-${颜色}-100\"> <p class=\"text-sm text-gray-500 pl-2 italic\"> ${去引号的引用内容} <span class=\"text-${颜色}-600 font-medium\">${强调部分}</span> </p> </div>",
-            "quote-box样式": ".quote-box { position: relative; padding: 1rem; border-radius: 0.5rem; margin: 1rem 0; } .quote-box::before { content: '\"'; position: absolute; top: -0.5rem; left: 0.5rem; font-size: 3rem; color: rgba(${颜色}, 0.2); font-family: serif; }"
+            "quote-box样式": ".quote-box { position: relative; padding: 1rem; border-radius: 0.5rem; margin: 1rem 0; } .quote-box::before { content: '\"'; position: absolute; top: 0rem; left: 0.5rem; font-size: 3rem; color: rgba(${颜色}, 0.2); font-family: serif; }"
           },
           "textEmphasis": {
             "说明": "在内容中灵活使用不同的强调样式",
